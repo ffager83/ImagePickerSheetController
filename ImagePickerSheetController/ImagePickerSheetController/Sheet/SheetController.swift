@@ -137,8 +137,8 @@ class SheetController: NSObject {
         }
         
         if indexPath == indexPaths[1] && !displayPreview {
- +           return (.Top(cornerRadius), UIEdgeInsets(top: 0, left: defaultInset, bottom: 0, right: defaultInset))
- +      }
+            return (.Top(cornerRadius), UIEdgeInsets(top: 0, left: defaultInset, bottom: 0, right: defaultInset))
+        }
         
         return (.None, UIEdgeInsets(top: 0, left: defaultInset, bottom: 0, right: defaultInset))
     }
