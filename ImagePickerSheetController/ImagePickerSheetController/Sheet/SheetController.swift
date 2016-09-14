@@ -12,6 +12,8 @@ private let defaultInset: CGFloat = 10
 
 class SheetController: NSObject {
     
+    var displayPreview: Bool = true;
+    
     private(set) lazy var sheetCollectionView: UICollectionView = {
         let layout = SheetCollectionViewLayout()
         let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
@@ -133,6 +135,10 @@ class SheetController: NSObject {
         else if indexPath == indexPaths.last {
             return (.Bottom(cornerRadius), UIEdgeInsets(top: 0, left: defaultInset, bottom: defaultInset, right: defaultInset))
         }
+        
+        if indexPath == indexPaths[1] && !displayPreview {
+ +           return (.Top(cornerRadius), UIEdgeInsets(top: 0, left: defaultInset, bottom: 0, right: defaultInset))
+ +      }
         
         return (.None, UIEdgeInsets(top: 0, left: defaultInset, bottom: 0, right: defaultInset))
     }
